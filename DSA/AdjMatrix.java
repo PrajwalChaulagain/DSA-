@@ -11,9 +11,9 @@ public class AdjMatrix {
 
     }
 
-    void addEdgs(int u,int v){
-        matrix[u][v]=1;
-        matrix[v][u]=1;
+    void addEdgs(int u,int v,int w){
+        matrix[u][v]=w;
+        matrix[v][u]=w;
 
     }
 
@@ -48,10 +48,17 @@ public class AdjMatrix {
 
     }    
     public static void main(String[] args){
-        AdjMatrix adj=new AdjMatrix(5);
-        adj.addEdgs(0, 1);
-        adj.addEdgs(0, 2);
-        adj.addEdgs(0, 0);
+        AdjMatrix adj=new AdjMatrix(6);
+        adj.addEdges(0,1,10);
+        adj.addEdges(0,5,100);
+        adj.addEdges(0,2,5);
+        adj.addEdges(1,2,2);
+        adj.addEdges(1,3,5);
+        adj.addEdges(2,3,10);
+        adj.addEdges(2,4,20);
+        adj.addEdges(3,5,2);
+        adj.addEdges(4,5,5);
+        
 
     }
 
