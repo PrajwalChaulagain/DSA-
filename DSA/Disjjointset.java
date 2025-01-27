@@ -18,23 +18,23 @@ public class Disjjointset {
 
     void findCycle(int u, int v) {
         int uabsroot = find(u);
-        int vbasroot = find(v);
-        if (uabsroot == vbasroot) {
+        int vabsroot = find(v);
+        if (uabsroot == vabsroot) {
             System.out.println("cycle detected");
         } else {
             // add edge to graph
-            union(vbasroot, vbasroot);
+            union(uabsroot, vabsroot);
         }
     }
 
-    void union(int uabsroot, int vbasroot) {
-        if (size[uabsroot] > size[vbasroot]) {
-            parent[vbasroot] = uabsroot;
-        } else if (size[uabsroot] < size[vbasroot]) {
-            parent[uabsroot] = vbasroot;
+    void union(int uabsroot, int vabsroot) {
+        if (size[uabsroot] > size[vabsroot]) {
+            parent[vabsroot] = uabsroot;
+        } else if (size[uabsroot] < size[vabsroot]) {
+            parent[uabsroot] = vabsroot;
         } else {
-            parent[uabsroot] = vbasroot;
-            size[vbasroot]++;
+            parent[uabsroot] = vabsroot;
+            size[vabsroot]++;
         }
     }
 
